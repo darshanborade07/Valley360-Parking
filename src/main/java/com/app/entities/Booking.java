@@ -3,10 +3,14 @@ package com.app.entities;
 import java.time.LocalDateTime;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import com.app.enums.VehicleType;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -21,7 +25,8 @@ public class Booking extends BaseEntity{
 
 	private LocalDateTime date;
 	private String vehicleNo;
-	private String VehicleType;
+	@Enumerated(EnumType.STRING)
+	private VehicleType VehicleType;
 	private int parkingHours;
 	private double price;
 	
@@ -37,7 +42,7 @@ public class Booking extends BaseEntity{
 		super();
 	}
 
-	public Booking(LocalDateTime date, String vehicleNo, String vehicleType, int parkingHours, double price) {
+	public Booking(LocalDateTime date, String vehicleNo, VehicleType vehicleType, int parkingHours, double price) {
 		super();
 		this.date = date;
 		this.vehicleNo = vehicleNo;

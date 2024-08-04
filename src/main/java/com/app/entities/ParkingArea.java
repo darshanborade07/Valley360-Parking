@@ -3,10 +3,15 @@ package com.app.entities;
 import java.util.Set;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import com.app.enums.Status;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -22,9 +27,10 @@ public class ParkingArea extends BaseEntity{
 	private String address;
 	private double latitude;
 	private double longitude;
-	private boolean status;
+	@Enumerated(EnumType.STRING)
+	private Status status;
 	
-	@OneToOne
+	@OneToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "owner_id")
 	private User user;
 
@@ -35,7 +41,7 @@ public class ParkingArea extends BaseEntity{
 		super();
 	}
 	
-	public ParkingArea(String address, double latitude, double longitude, boolean status) {
+	public ParkingArea(String address, double latitude, double longitude, Status status) {
 		super();
 		this.address = address;
 		this.latitude = latitude;

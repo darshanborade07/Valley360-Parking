@@ -1,5 +1,7 @@
 package com.app.dto;
 
+import com.app.enums.Status;
+import com.app.enums.VehicleType;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonProperty.Access;
 
@@ -12,8 +14,8 @@ import lombok.ToString;
 @ToString
 public class ParkingSlotDTO extends BaseDTO {
 
-	private String vehicleType;
-	private boolean status;
+	private VehicleType vehicleType;
+	private Status status;
 	private double price;
 	@JsonProperty(access = Access.WRITE_ONLY)
 	private Long parkingId;
