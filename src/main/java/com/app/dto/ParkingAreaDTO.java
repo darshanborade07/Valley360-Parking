@@ -8,8 +8,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-@Getter
-@Setter
+
 @ToString
 public class ParkingAreaDTO extends BaseDTO{
 
@@ -19,4 +18,37 @@ public class ParkingAreaDTO extends BaseDTO{
 	private Status status;
 	@JsonProperty(access = Access.WRITE_ONLY)
 	private Long ownerId;
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public double getLatitude() {
+		return latitude;
+	}
+	public void setLatitude(double latitude) {
+		this.latitude = latitude;
+	}
+	public double getLongitude() {
+		return longitude;
+	}
+	public void setLongitude(double longitude) {
+		this.longitude = longitude;
+	}
+	public Status getStatus() {
+		return status;
+	}
+	public void setStatus(Status status) {
+		this.status = status;
+	}
+	public Long getOwnerId() {
+		return ownerId;
+	}
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+	}
+	
+	
+	
 }

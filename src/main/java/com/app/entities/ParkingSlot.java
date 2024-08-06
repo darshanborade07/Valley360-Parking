@@ -18,12 +18,15 @@ import lombok.ToString;
 
 @Entity
 @Table(name = "parking_slots")
-@Getter
-@Setter
-@NoArgsConstructor
+
 @ToString
 public class ParkingSlot extends BaseEntity {
 	
+	public ParkingSlot() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	@Enumerated(EnumType.STRING)
 	private VehicleType vehicleType;
 	@Enumerated(EnumType.STRING)
@@ -38,6 +41,38 @@ public class ParkingSlot extends BaseEntity {
 		super();
 		this.vehicleType = vehicleType;
 		this.status = status;
+	}
+
+	public VehicleType getVehicleType() {
+		return vehicleType;
+	}
+
+	public void setVehicleType(VehicleType vehicleType) {
+		this.vehicleType = vehicleType;
+	}
+
+	public Status getStatus() {
+		return status;
+	}
+
+	public void setStatus(Status status) {
+		this.status = status;
+	}
+
+	public double getPrice() {
+		return price;
+	}
+
+	public void setPrice(double price) {
+		this.price = price;
+	}
+
+	public ParkingArea getParking() {
+		return parking;
+	}
+
+	public void setParking(ParkingArea parking) {
+		this.parking = parking;
 	}
 	
 	

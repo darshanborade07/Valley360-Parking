@@ -14,10 +14,7 @@ import lombok.Setter;
 
 @Entity
 @Table(name = "roles")
-@Getter
-@Setter
 
-@RequiredArgsConstructor(staticName = "roleName")
 public class Role extends BaseEntity {
 	@Enumerated(EnumType.STRING)
 	@Column(unique = true)
@@ -32,4 +29,5 @@ public class Role extends BaseEntity {
 	public void setRoleName(RoleEnum roleName) {
 		this.roleName = roleName;
 	}
+	
 }

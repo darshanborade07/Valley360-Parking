@@ -18,8 +18,7 @@ import lombok.ToString;
 
 @Entity
 @Table(name = "bookings")
-@Getter
-@Setter
+
 @ToString
 public class Booking extends BaseEntity{
 
@@ -49,6 +48,62 @@ public class Booking extends BaseEntity{
 		VehicleType = vehicleType;
 		this.parkingHours = parkingHours;
 		this.price = price;
+	}
+
+	public LocalDateTime getDate() {
+		return date;
+	}
+
+	public void setDate(LocalDateTime date) {
+		this.date = date;
+	}
+
+	public String getVehicleNo() {
+		return vehicleNo;
+	}
+
+	public void setVehicleNo(String vehicleNo) {
+		this.vehicleNo = vehicleNo;
+	}
+
+	public VehicleType getVehicleType() {
+		return VehicleType;
+	}
+
+	public void setVehicleType(VehicleType vehicleType) {
+		VehicleType = vehicleType;
+	}
+
+	public int getParkingHours() {
+		return parkingHours;
+	}
+
+	public void setParkingHours(int parkingHours) {
+		this.parkingHours = parkingHours;
+	}
+
+	public double getPrice() {
+		return price;
+	}
+
+	public void setPrice(double price) {
+		this.price = price;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public ParkingSlot getParkingSlot() {
+		return parkingSlot;
+	}
+
+	public void setParkingSlot(ParkingSlot parkingSlot) {
+		this.parkingSlot = parkingSlot;
 	}
 	
 	
